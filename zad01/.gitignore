@@ -1,3 +1,4 @@
+.gitignore
 old-versions
 __pycache__
 notatki.md

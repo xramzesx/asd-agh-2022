@@ -1,5 +1,5 @@
 # Jakub Kędra
-##### OPIS #####
+##### OPIS ##############################################################
 # 
 # Chcąć najszybciej znaleźć maksymalny poziom "c" najpierw sortuje 
 # tablice po długości przedziałów (b - a) malejąco.
@@ -18,21 +18,26 @@
 # I na sam koniec iteruje linked liste w poszukiwaniu największego z 
 # liczników i go potem zwracam 
 # 
-##### ZŁOŻONOŚĆ OBLICZENIOWA #####
+##### ZŁOŻONOŚĆ OBLICZENIOWA ###########################################
 # 
-# W optymistycznym przypadku:
+# - W ogólnym przypadku:
+#   O(nlogn + n*k)
+# gdzie k oznacza liczbę rozłącznych nadprzedziałów
+# 
+# - W optymistycznym przypadku:
 #   O(nlogn + n)
 # gdzie nlogn wynika z korzystania z quicksortu, a n z osobnej pętli
-# W pesymistycznym przypadku:
+# 
+# - W pesymistycznym przypadku:
 #   O(n^2 + n^2)
 # gdzie pierwsze n^2 wynika z quicksortu, a drugie z przypadku, w którym
 # żadne z 2 elementów listy nie zawierają się w sobie
 # 
-##### IMPORTY #####
+##### IMPORTY ##########################################################
 
 from zad2testy import runtests
 
-##### STRUKTURA KOLEJKI #####
+##### STRUKTURA LINKED LISTY #####
 
 class Node:
     def __init__(self, rang = None, next = None) -> None:

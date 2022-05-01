@@ -1,7 +1,7 @@
 # Jakub Kędra
 ####### ZŁOŻONOŚĆ ########################
 # BEST : O(nlogn + n)
-# WORST: O(nlogn + n*n)
+# WORST: O(nlogn + n^2)
 ####### OPIS #############################
 # 
 # Swoje rozwiązanie zaczynam od posortowawnia tablicy T po końcach przedziałów.

@@ -1,7 +1,8 @@
 # Jakub Kędra
 #### OPIS ####
 # Najpierw dla każdego pojedynczego wierzchołka nadajemy dystans od wierzchołka początkowego s.
-# W tym celu wykorzystujemy zwykły algorytm BFS.
+# W tym celu wykorzystujemy zwykły algorytm BFS. W tym wypadku wystarczy tylko znaleźć wszystkie
+# wierzchołki w promieniu minimalnej odległości pomiędzy punktami s oraz t.
 # 
 # Następnie, jesli w ogóle oba wierzchołki s i t znajdują się przynajmniej w spójnym podgrafie,
 # będziemy próbować odtwarzać wszystkie możliwe najkrótsze ścieżki. 
@@ -53,7 +54,7 @@ def longer( G, s, t ):
 
     # prepare arrays
     visited = [False] * n
-    distances = [0] * n
+    distances = [-1] * n
     
     # setting up first BFS
     visited[s] = True
@@ -63,16 +64,24 @@ def longer( G, s, t ):
 
     #### BFS -> count distances ####
 
+    min_distance = float('inf')
+    
     while q:
         u = q.popleft()
+        if distances[u] > min_distance:
+            continue
         for v in G[u]:
             if not visited[v]:
                 visited[v] = True
                 distances[v] = distances[u] + 1  
+                if v == t:
+                    min_distance = distances[v]
                 q.append(v)
 
+    # print( min_distance, distances[t] )
+
     # graf nie jest spójny
-    if distances[t] == 0:
+    if distances[t] == -1:
         return None
 
 
@@ -83,8 +92,8 @@ def longer( G, s, t ):
     max_distance = distances[t] + 1
     
     visited[t] = False
-    nodes = [0] * max_distance
-    lasts = [None] * max_distance
+    nodes = [ 0 ] * max_distance
+    lasts = [-1 ] * max_distance
     
     while q:
         u = q.popleft()

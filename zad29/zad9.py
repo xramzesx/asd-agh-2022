@@ -1,5 +1,6 @@
 # Jakub Kędra
 ##### OPIS ############################
+# 
 # Jest to algorytm nieco zachłanny. Pierwszym miastem zawsze jest jeden z sąsiadów źródla S,
 # drugim natomiast dowolne miasto, nie będące już wybranym miastem ani nie będące źródłem S.
 # 
@@ -11,9 +12,10 @@
 # wykokrzystujący BFS oraz szukamy największego z nich.
 # 
 #### ZŁOŻONOŚĆ ########################
+# 
 # O( V^2*E + V*E^2 )
 # 
-# 
+#### IMPLEMENTACJA ####################
 
 from collections import deque
 from zad9testy import runtests

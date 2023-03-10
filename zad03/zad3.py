@@ -124,8 +124,7 @@ def bucket_sort ( arr, min_v, max_v ):
 
 
 def SortTab(T,P):
-    # tu prosze wpisac wlasna implementacje
-    
+        
     # Szukamy końcowych fragmentów przedziałów
     min_v, max_v = min_max( P )
 

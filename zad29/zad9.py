@@ -70,18 +70,15 @@ def find_maxflow( G, s, t ):
             u = v
 
         u = t
-        # print( flow )
         while path[u] != -1:
             v, i = path[u]
             F[v][i] += flow
             u = v
-            # F[]
         path = find_path( G, F, s, t )
     
     return sum ( F[s] )
 
 def maxflow( edges , s ):
-    # tu prosze wpisac wlasna implementacje
 
     edges.sort(key= lambda x : x[2], reverse = True)
 
